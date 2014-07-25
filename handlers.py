@@ -8,7 +8,11 @@ def handle_msg(msg):
     
 #plays the media files
 def media_player(media):
+<<<<<<< HEAD
     background = AsyncTask('/usr/bin/omxplayer', media)
+=======
+    background = AsyncTask('/usr/bin/vlc', media)
+>>>>>>> f85f7aa4b7675b1e5291bc82c7a84f9c87ef14a9
     background.setDaemon(True)
     background.start()
     print('The main program continues to run in foreground.')

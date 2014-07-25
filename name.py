@@ -1,11 +1,15 @@
 #!/usr/bin/python
 import xmpp
 import handlers
+<<<<<<< HEAD
 import new_handler
+=======
+>>>>>>> f85f7aa4b7675b1e5291bc82c7a84f9c87ef14a9
 
 user="foe.capstone.15@gmail.com"
 password="nfcandroidpi"
 
+<<<<<<< HEAD
 # the player
 player = None
 
@@ -32,6 +36,22 @@ def message_handler(conn_object, message_node):
    print message_node.getBody()
    command = message_node.getBody().split()
    player = options[command[0]](media[command[1]])
+=======
+options = {
+   "play_video": handlers.media_player,
+   "torch": handlers.toggle_on_off_lights
+}
+
+movie = {
+   "break": '/home/cmeon/Downloads/Veep.S03E06.HDTV.x264-2HD.mp4'
+}
+
+a = 1
+def message_handler(conn_object, message_node):
+   print message_node.getBody()
+   command = message_node.getBody().split()
+   options[command[0]](movie[command[1]])
+>>>>>>> f85f7aa4b7675b1e5291bc82c7a84f9c87ef14a9
 
 def presence_handler(conn_object, presence_node):
    print presence_node.getAttr("from")
